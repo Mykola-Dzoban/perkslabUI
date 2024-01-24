@@ -3,6 +3,7 @@
 	"description": "PerksLab UI components",
 	"version": "0.0.3",
 	"main": "dist/index.ts",
+	"typings": "dist/index.d.ts",
 	"exports": {
 		".": {
 			"import": "./dist/index.ts",
@@ -13,7 +14,7 @@
 	"scripts": {
 		"build:ts": "tsc -p tsconfig.build.json",
 		"build:styles": "postcss src/styles.css -o dist/styles.css",
-		"prepublishOnly": "npm run build:ts && npm run build:styles",
+		"prepublishOnly": "npm run build:ts && npm run build:styles && cp src/styles.css dist/styles.css",
 		"start": "react-scripts start",
 		"build:react": "react-scripts build",
 		"test": "react-scripts test",
