@@ -2,12 +2,12 @@
 	"name": "perkslab-ui",
 	"description": "PerksLab UI components",
 	"version": "0.0.4",
-	"main": "dist/index.ts",
+	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
 	"exports": {
 		".": {
-			"import": "./dist/index.ts",
-			"require": "./dist/index.ts"
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
 		},
 		"./components/*": "./src/components/*"
 	},
