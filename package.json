@@ -1,0 +1,54 @@
+{
+	"name": "perkslab-ui",
+	"description": "PerksLab UI components",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"require": "./dist/index.js"
+		},
+		"./components/*": "./src/components/*"
+	},
+	"scripts": {
+		"build": "babel src -d dist --copy-files",
+		"build:styles": "postcss src/styles.css -o dist/styles.css",
+		"prepublishOnly": "npm run build && npm run build:styles",
+		"start": "react-scripts start",
+		"build:react": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject"
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-react"
+		]
+	},
+	"keywords": [
+		"react",
+		"react-components",
+		"tailwindcss",
+		"ui-components",
+		"component-library",
+		"frontend",
+		"web-development",
+		"design-system",
+		"user-interface",
+		"npm-package"
+	],
+	"author": "Mykola Dzoban",
+	"license": "ISC",
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"tailwindcss": "^3.4.1"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.23.4",
+		"@babel/core": "^7.23.7",
+		"@babel/preset-react": "^7.23.3",
+		"autoprefixer": "^10.4.17",
+		"postcss": "^8.4.33",
+		"postcss-cli": "^11.0.0"
+	}
+}
