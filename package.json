@@ -4,6 +4,19 @@
 	"version": "0.0.6",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
+	"author": "Mykola Dzoban",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Mykola-Dzoban/perkslabUI"
+	},
+	"bugs": {
+		"email": "nick.dzoban@gmail.com"
+	},
+	"funding": {
+		"type": "buy me a coffee",
+		"url": "https://www.buymeacoffee.com/nickdzoban"
+	},
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
@@ -37,8 +50,6 @@
 		"user-interface",
 		"npm-package"
 	],
-	"author": "Mykola Dzoban",
-	"license": "ISC",
 	"dependencies": {
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
