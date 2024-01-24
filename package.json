@@ -14,7 +14,7 @@
 	"scripts": {
 		"build:ts": "tsc -p tsconfig.build.json",
 		"build:styles": "postcss src/styles.css -o dist/styles.css",
-		"prepublishOnly": "npm run build:ts && npm run build:styles && cp src/styles.css dist/styles.css",
+		"prepublishOnly": "npm run build:ts && npm run build:styles",
 		"start": "react-scripts start",
 		"build:react": "react-scripts build",
 		"test": "react-scripts test",
