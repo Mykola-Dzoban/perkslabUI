@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '../utils';
+import './styles.css';
 
 interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 	type: string;
