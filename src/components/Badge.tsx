@@ -1,14 +1,15 @@
 import React, { ReactNode } from 'react';
-import '../styles.css';
+import './styles.css';
 
-interface CardProps {
+
+interface BadgeProps {
 	type: string;
 	className?: string;
 	children?: ReactNode;
 	onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const Badge: React.FC<CardProps> = ({ className, children, onClick, type }) => {
+const Badge: React.FC<BadgeProps> = ({ className, children, onClick, type }) => {
 	const types: { [key: string]: string } = {
 		none: 'bg-white border-2 px-2 w-fit border-zinc-950',
 		standard: 'bg-white border-2 w-fit px-2 border-zinc-950 hover:font-medium hover:bg-gray-200',
