@@ -1,15 +1,11 @@
-import React, { ReactNode } from 'react';
-import './styles.css';
+import React from 'react';
+import { cn } from '../utils';
 
-
-interface BadgeProps {
+interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
 	type: string;
-	className?: string;
-	children?: ReactNode;
-	onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-const Badge: React.FC<BadgeProps> = ({ className, children, onClick, type }) => {
+const Badge: React.FC<BadgeProps> = ({ className, children, type, ...props }) => {
 	const types: { [key: string]: string } = {
 		none: 'bg-white border-2 px-2 w-fit border-zinc-950',
 		standard: 'bg-white border-2 w-fit px-2 border-zinc-950 hover:font-medium hover:bg-gray-200',
@@ -18,12 +14,11 @@ const Badge: React.FC<BadgeProps> = ({ className, children, onClick, type }) => 
 		destructive: 'bg-red-400 border-2 w-fit px-2 border-zinc-950 hover:font-medium hover:bg-red-500',
 	};
 
-	const badgeClasses = `${types[type]} ${className ?? ''}`;
-
 	return (
-		<div className={badgeClasses} onClick={onClick}>
+		<div className={cn(types[types.hasOwnProperty(type) ? type : 'none'], className)} {...props}>
 			{children || 'badge'}
 		</div>
 	);
 };
+
 export default Badge;
