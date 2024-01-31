@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { cn } from 'src/utils';
+import { cn } from '../utils';
 
 interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {}
 
