@@ -3,11 +3,11 @@ import { cn } from '../utils';
 import './styles.css';
 
 interface BadgeProps extends React.HTMLAttributes<HTMLButtonElement> {
-	type: string;
+	variant?: string;
 }
 
-const Button: React.FC<BadgeProps> = ({ className, children, type, ...props }) => {
-	const types: { [key: string]: string } = {
+const Button: React.FC<BadgeProps> = ({ className, children, variant, ...props }) => {
+	const variants: { [key: string]: string } = {
 		none: 'bg-white border-2 px-8 py-2 w-fit border-zinc-950',
 		standard: 'border-2 w-fit px-8 py-2 border-zinc-950 hover:font-medium bg-gray-200 hover:bg-gray-400',
 		neutral: 'bg-neutral-600 text-gray-50 border-2 w-fit px-8 py-2 border-zinc-950 hover:font-medium hover:bg-neutral-700',
@@ -35,7 +35,9 @@ const Button: React.FC<BadgeProps> = ({ className, children, type, ...props }) =
 		'error-outline': 'bg-transparent border-2 w-fit px-8 py-2 border-red-500 hover:font-medium hover:bg-gray-100',
 	};
 	return (
-		<button className={cn(types[types.hasOwnProperty(type) ? type : 'none'], className)} {...props}>
+		<button
+			className={cn(variants[variant ? (variants.hasOwnProperty(variant) ? variant : 'none') : 'none'], className)}
+			{...props}>
 			{children || 'button'}
 		</button>
 	);
