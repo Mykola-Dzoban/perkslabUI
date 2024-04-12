@@ -3,10 +3,10 @@ import { cn } from '../utils';
 import './styles.css';
 
 interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-	type: string;
+	variant: 'none' | 'standard' | 'primary' | 'neutral' | 'destructive';
 }
 
-const Badge: React.FC<BadgeProps> = ({ className, children, type, ...props }) => {
+const Badge: React.FC<BadgeProps> = ({ className, children, variant, ...props }) => {
 	const types: { [key: string]: string } = {
 		none: 'bg-white border-2 px-2 w-fit border-zinc-950',
 		standard: 'bg-white border-2 w-fit px-2 border-zinc-950 hover:font-medium hover:bg-gray-200',
@@ -16,7 +16,7 @@ const Badge: React.FC<BadgeProps> = ({ className, children, type, ...props }) =>
 	};
 
 	return (
-		<div className={cn(types[types.hasOwnProperty(type) ? type : 'none'], className)} {...props}>
+		<div className={cn(types[types.hasOwnProperty(variant) ? variant : 'none'], className)} {...props}>
 			{children || 'badge'}
 		</div>
 	);

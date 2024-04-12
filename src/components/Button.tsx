@@ -3,7 +3,25 @@ import { cn } from '../utils';
 import './styles.css';
 
 interface BadgeProps extends React.HTMLAttributes<HTMLButtonElement> {
-	variant?: string;
+	variant?:
+		| 'none'
+		| 'standard'
+		| 'neutral'
+		| 'ghost'
+		| 'primary'
+		| 'primary-outline'
+		| 'secondary'
+		| 'secondary-outline'
+		| 'accent'
+		| 'accent-outline'
+		| 'info'
+		| 'info-outline'
+		| 'warning'
+		| 'warning-outline'
+		| 'success'
+		| 'success-outline'
+		| 'error'
+		| 'error-outline';
 }
 
 const Button: React.FC<BadgeProps> = ({ className, children, variant, ...props }) => {
