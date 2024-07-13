@@ -57,7 +57,7 @@ export const SheetCloseButton: React.FC<SheetTriggerProps> = ({ className, child
 	const sheetContentContext = React.useContext(SheetContentContext);
 
 	if (!sheetContentContext?.isInsideSheetContent) {
-		throw new Error('SheetCloseButton can only be used inside SheetContent');
+		throw new Error('Sheet Close Button can only be used inside Sheet Content');
 	}
 
 	return (
@@ -79,7 +79,7 @@ export const SheetActionButton: React.FC<SheetTriggerProps> = ({ className, chil
 	const sheetContentContext = React.useContext(SheetContentContext);
 
 	if (!sheetContentContext?.isInsideSheetContent) {
-		throw new Error('SheetActionButton can only be used inside SheetContent');
+		throw new Error('Sheet Action Button can only be used inside Sheet Content');
 	}
 
 	const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
