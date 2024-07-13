@@ -1,0 +1,9 @@
+# Example labeler.yml configuration
+
+# Apply the "bug" label to issues with "bug" in their title or body
+bug:
+  - "bug"
+
+# Apply the "feature" label to issues with "feature" in their title or body
+feature:
+  - "feature"
