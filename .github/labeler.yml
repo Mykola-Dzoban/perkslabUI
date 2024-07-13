@@ -1,0 +1,14 @@
+# Add 'root' label to any root file changes
+root:
+- '*'
+
+# Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
+source:
+- any: ['src/**/*', '!src/docs/*']
+
+components:
+- any: ['src/components/*', '!src/docs/*']
+
+# Add label3 to any change to .txt files within the entire repository. Quotation marks are required for the leading asterisk
+documentation:
+- '**/*.md'
