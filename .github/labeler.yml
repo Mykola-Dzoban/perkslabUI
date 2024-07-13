@@ -5,7 +5,7 @@ root:
   - any-glob-to-any-file: '*'
 
 # Add 'AnyChange' label to any changes within the entire repository
-AnyChange:
+GlobalChange:
 - changed-files:
   - any-glob-to-any-file: '**'
 
@@ -13,16 +13,6 @@ AnyChange:
 Documentation:
 - changed-files:
   - any-glob-to-any-file: src/docs/**
-
-# Add 'Documentation' label to any file changes within 'docs' or 'guides' folders
-Documentation:
-- changed-files:
-  - any-glob-to-any-file:
-    - src/docs/*
-
-# Add 'Documentation' label to any change to .md files within the entire repository 
-Documentation:
-- changed-files:
   - any-glob-to-any-file: '**/*.md'
 
 # Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
