@@ -12,7 +12,12 @@ interface AccordionContextProps {
 	toggleExpanded: () => void;
 }
 
+interface AccordionContentContextProps {
+	isInsideAccordion: boolean;
+}
+
 const AccordionContext = React.createContext<AccordionContextProps | undefined>(undefined);
+const AccordionContentContext = React.createContext<AccordionContentContextProps | undefined>(undefined);
 
 export const Accordion: React.FC<AccordionProps> = ({ className, children, ...props }) => {
 	const [expanded, setExpanded] = useState(false);
@@ -22,14 +27,21 @@ export const Accordion: React.FC<AccordionProps> = ({ className, children, ...pr
 	};
 
 	return (
-		<details className={cn('rounded-md border-2 border-zinc-950 p-2 bg-rose-200', className)} {...props}>
-			<AccordionContext.Provider value={{ expanded, toggleExpanded }}>{children}</AccordionContext.Provider>
-		</details>
+		<AccordionContentContext.Provider value={{ isInsideAccordion: true }}>
+			<details className={cn('rounded-md border-2 border-zinc-950 p-2 bg-rose-200', className)} {...props}>
+				<AccordionContext.Provider value={{ expanded, toggleExpanded }}>{children}</AccordionContext.Provider>
+			</details>
+		</AccordionContentContext.Provider>
 	);
 };
 
 export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ className, children, ...props }) => {
 	const { toggleExpanded, expanded } = React.useContext(AccordionContext) || {};
+	const accordionContentContext = React.useContext(AccordionContentContext);
+
+	if (!accordionContentContext?.isInsideAccordion) {
+		throw new Error('Accordion Trigger can only be used inside Accordion');
+	}
 
 	return (
 		<summary
@@ -55,6 +67,11 @@ export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ className, c
 };
 
 export const AccordionContent: React.FC<AccordionContentProps> = ({ className, children, ...props }) => {
+	const accordionContentContext = React.useContext(AccordionContentContext);
+
+	if (!accordionContentContext?.isInsideAccordion) {
+		throw new Error('Accordion Content can only be used inside Accordion');
+	}
 	return (
 		<div style={{ transition: 'transform 0.3s ease-in-out' }} className={cn('overflow-hidden', className)} {...props}>
 			{children}
