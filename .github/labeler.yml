@@ -1,22 +1,14 @@
+# Add 'root' label to any root file changes
 root:
-  - changed-files:
-      - any-glob-to-any-file: '*'
+- '*'
 
-global:
-  - changed-files:
-      - any-glob-to-any-file: '**'
-
-documentation:
-  - changed-files:
-      - any-glob-to-any-file: '**/*.md'
-
+# Add 'source' label to any change to src files within the source dir EXCEPT for the docs sub-folder
 source:
-  - all:
-      - changed-files:
-          - any-glob-to-any-file: 'src/**/*'
-          - all-globs-to-all-files: '!src/components/**'
+- any: ['src/**/*', '!src/docs/*']
 
-component:
-  - all:
-      - changed-files:
-          - any-glob-to-any-file: 'src/components/**'
+components:
+- any: ['src/components/*', '!src/docs/*']
+
+# Add label3 to any change to .txt files within the entire repository. Quotation marks are required for the leading asterisk
+documentation:
+- '**/*.md'
