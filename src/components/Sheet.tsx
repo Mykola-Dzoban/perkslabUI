@@ -105,9 +105,7 @@ export const SheetContent: React.FC<SheetContentProps> = ({ className, children,
 	const { expanded, toggleExpanded } = React.useContext(SheetContext) || {};
 
 	const handleBackgroundClick = (event: React.MouseEvent<HTMLDivElement>) => {
-		if (event.target === event.currentTarget) {
-			toggleExpanded?.();
-		}
+		if (event.target === event.currentTarget) toggleExpanded?.();
 	};
 
 	return (
