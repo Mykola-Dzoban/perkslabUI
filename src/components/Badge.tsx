@@ -16,7 +16,9 @@ const Badge: React.FC<BadgeProps> = ({ className, children, variant, ...props })
 	};
 
 	return (
-		<div className={cn(types[types.hasOwnProperty(variant) ? variant : 'none'], className)} {...props}>
+		<div
+			className={cn('rounded-md transition-all duration-300', types[types.hasOwnProperty(variant) ? variant : 'none'], className)}
+			{...props}>
 			{children || 'badge'}
 		</div>
 	);
