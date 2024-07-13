@@ -46,15 +46,19 @@ const Button: React.FC<BadgeProps> = ({ className, children, variant, ...props }
 		warning: 'bg-yellow-200 border-2 w-fit px-8 py-2 border-zinc-950 hover:font-medium hover:bg-yellow-300',
 		'warning-outline': 'bg-transparent border-2 w-fit px-8 py-2 border-yellow-300 hover:font-medium hover:bg-gray-100',
 		//
-		success: 'bg-lime-300 border-2 w-fit px-8 py-2 border-zinc-950 hover:font-medium hover:bg-lime-400',
-		'success-outline': 'bg-transparent border-2 w-fit px-8 py-2 border-lime-400 hover:font-medium hover:bg-gray-100',
+		success: 'bg-lime-300 border-2 w-fit px-8 py-2 border-zinc-950 hover:font-medium hover:bg-green-600',
+		'success-outline': 'bg-transparent border-2 w-fit px-8 py-2 border-green-600 hover:font-medium hover:bg-gray-100',
 		//
 		error: 'bg-red-400 border-2 w-fit px-8 py-2 border-zinc-950 hover:font-medium hover:bg-red-500',
 		'error-outline': 'bg-transparent border-2 w-fit px-8 py-2 border-red-500 hover:font-medium hover:bg-gray-100',
 	};
 	return (
 		<button
-			className={cn(variants[variant ? (variants.hasOwnProperty(variant) ? variant : 'none') : 'none'], className)}
+			className={cn(
+				'rounded-sm transition-all duration-300',
+				variants[variant ? (variants.hasOwnProperty(variant) ? variant : 'none') : 'none'],
+				className
+			)}
 			{...props}>
 			{children || 'button'}
 		</button>
