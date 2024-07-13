@@ -55,7 +55,7 @@ const Button: React.FC<BadgeProps> = ({ className, children, variant, ...props }
 	return (
 		<button
 			className={cn(
-				'rounded-sm transition-all duration-300',
+				'rounded-lg transition-all duration-300',
 				variants[variant ? (variants.hasOwnProperty(variant) ? variant : 'none') : 'none'],
 				className
 			)}
