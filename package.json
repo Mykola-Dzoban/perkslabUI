@@ -1,7 +1,7 @@
 {
 	"name": "perkslab-ui",
 	"description": "PerksLab UI components",
-	"version": "0.0.20",
+	"version": "0.0.21",
 	"main": "dist/index.js",
 	"typings": "dist/index.d.ts",
 	"author": "Mykola Dzoban",
