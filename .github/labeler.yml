@@ -9,6 +9,9 @@ source:
 components:
 - any: ['src/components/*', '!src/docs/*']
 
+card:
+- any: ['src/components/Card.tsx']
+
 # Add label3 to any change to .txt files within the entire repository. Quotation marks are required for the leading asterisk
 documentation:
 - '**/*.md'
